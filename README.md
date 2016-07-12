@@ -1,5 +1,5 @@
 # movePlanner
-Website that dynamically displays data for a user's inputted address and city. 
+Website that dynamically displays data for a user's inputted address and city using AJAX requests and JSON data.
 
 This project was created using jQqery. It requests data from three APIs utilizing AJAX and handling mostly JSON data.
 
