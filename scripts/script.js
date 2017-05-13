@@ -2,9 +2,9 @@ loadData = () => {
     $('#wikipedia-links').text("");
     $('#nytimes-articles').text("");
 
-    var wikiApiUserAgent = process.env.GOOG_MAP;
-    var streetviewApiKey = process.env.NYT_API;
-    var nytApiKey = process.env.WIKI_CRED;
+    const wikiApiUserAgent = 'movePlanner app owner=Jordancotton55@gmail.com';
+    const streetviewApiKey = 'AIzaSyDvQ5FPpmtyOyIqNnGja06oSyM_IArKJRM'; 
+    const nytApiKey = '0676b86673ca4398aecffa11ba10f626'; 
 
     /* Google Maps Streeview API section */
     /* -------------------------------- */
