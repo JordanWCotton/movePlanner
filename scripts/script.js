@@ -1,4 +1,4 @@
-loadData = () => {
+function loadData () {
     $('#wikipedia-links').text("");
     $('#nytimes-articles').text("");
 
