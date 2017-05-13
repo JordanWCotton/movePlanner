@@ -1,33 +1,93 @@
-* {box-sizing:border-box;}
-body {background-color: #CCC;}
+@import url('https://fonts.googleapis.com/css?family=Droid+Sans');
 
-.bgimg {
-    position:fixed;
-    top: 0;
-    left: 0;
-    width:100%;
-    z-index:-1;
-    opacity:1;
+/* Desktop styles */
+* {
+    font-family: 'Droid Sans', sans-serif;
 }
 
-.greeting {
-    color:black;
-    text-shadow: 1px 1px 3px rgba(255,255,255, .5);
+body {
+    background-color: #E74C3C;
+    color: #191919;
+}
+
+a:link, a:visited, a:hover, a:active {
+    color: #191919;
+}
+
+h1 {
+    font-size: 80px;
+}
+
+#city-selection {
+    margin: auto;
+    margin-top: 10%; 
     text-align: center;
 }
 
-.wikipedia-container {
-    float:right;
-    width:290px;
-    padding:10px;
-    margin-right: 10px;
-    background-color: rgba(255,255,255,0.7);
+#form-container {
+    background-color: #DDDDDD;
+    width: 40%;
+    margin: auto;
+    margin-top: 5%;
+    padding: 5%;
+    border-radius: 6px;
 }
 
-.nytimes-container {
-    padding: 10px;
-    margin-right:300px;
-    background-color: rgba(255,255,255,0.7);
+#loading-text {
+    margin-top: 15%;
+    text-align: center;
+    display: none;
+}
+
+.hide-it {
+    display: none;
+}
+
+#streetview-container {
+    margin-top: 8%;
+    width: 60%;
+    margin: auto;
+    text-align: center;
+}
+
+#streetview-container img {
+    max-height: 330px;
+    max-width: 100%;
+}
+
+#greeting {
+    margin-top: 10%;
+    text-align: center;
+}
+
+#wiki-section {
+    text-align: center;
+    width: 40%;
+    margin: auto;
+    margin-top: 8%;
+    margin-bottom: 8%;
+}
+
+#wikipedia-header {
+    background-color: #DDDDDD;
+    border-radius: 6px;
+}
+
+#wikipedia-links li {
+    list-style: none;
+    margin-bottom: 1%;
+}
+
+#nytimes-section {
+    text-align: center;
+    width: 80%;
+    margin: auto;
+    margin-bottom: 8%;
+}
+
+#nytimes-header {
+    background-color: #DDDDDD;
+    border-radius: 6px;
 }
 
 .article-list {
@@ -37,9 +97,44 @@ body {background-color: #CCC;}
 
 .article {
     list-style-type: none;
-    padding:10px;
-    border-top: 1px solid #CCC;
+    padding: 10px;
+    border-top: 3px solid #95A5A6;
 }
 .article:first-child {
     border-top:none;
+}
+
+@media only screen and (max-width: 750px) {
+
+h1 {
+    font-size: 30px;
+}
+
+#app-name {
+    font-size: 55px;
+}
+
+#city-selection {
+    margin-top: 20%; 
+}
+
+#form-container {
+    width: 80%;
+}
+
+#loading-text {
+    margin-top: 25%;
+}
+
+#streetview-container {
+    width: 90%;
+}
+
+#wiki-section {
+    width: 80%;
+}
+
+#nytimes-section {
+    width: 90%;
+}
 }

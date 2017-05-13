@@ -1,7 +1,10 @@
-function loadData() {
-    /* Clear out data from a previous request before making the new request */
+loadData = () => {
     $('#wikipedia-links').text("");
     $('#nytimes-articles').text("");
+
+    const wikiApiUserAgent = '';
+    const streetviewApiKey = ''; 
+    const nytApiKey = ''; 
 
     /* Google Maps Streeview API section */
     /* -------------------------------- */
@@ -9,19 +12,15 @@ function loadData() {
     var city = $('#city'). val();
     var location = street + ', ' + city;
 
-    /* Input your API key into the following variable */
-    var streetviewApiKey = ''; //Personal API key removed
-
-    /* Adding everything together for the call to google maps streetview api */
     var streetviewCall = 'https://maps.googleapis.com/maps/api/streetview?size=600x300&location=' + location
     +'&key='+ streetviewApiKey;
 
-    $('body').append('<img src="' + streetviewCall + '" class="bgimg" >');
+    $('#streetview-container').append('<img src="' + streetviewCall + '" alt="streetview photo">');
     $('#greeting').text('So you want to live at ' + street + ' in ' + city + '?');
 
     /* New York Times Article Search API section */
     /* ----------------------------------------- */
-    var nytApiKey = ''; //Personal API key removed, insert your API key here
+
     var nytUrl = 'https://api.nytimes.com/svc/search/v2/articlesearch.json';
     nytUrl += '?' + $.param({
       'api-key': nytApiKey,
@@ -30,8 +29,8 @@ function loadData() {
       'sort': "newest"
     });
 
-    $.getJSON(nytUrl, function (data) {
-      $('#nytimes-header').text('New York Times Articles about ' + city + ':');
+    $.getJSON(nytUrl, (data) => {
+      $('#nytimes-header').html('<h1>New York Times Articles about ' + city + ':</h1>');
 
       var articles = data.response.docs;
 
@@ -42,16 +41,16 @@ function loadData() {
         '</a>' + '<p>' + indivArt.snippet + '</p>' + '</li>');
       };
 
-    }).fail(function(e) {
+    }).fail((e) => {
       $('#nytimes-header').text('Sorry, the New York Times articles could not be loaded!');
     });
 
     /* Wikipedia Articles API section */
     /* ------------------------------ */
-    var wikiApiUserAgent = ''; //Insert your API-User-Agent information here
+    
     var wikiApiUrl = 'https://en.wikipedia.org/w/api.php?action=opensearch&search=' + city + '&format=json&callback=wikiCallBack';
 
-    var requestTimeout = setTimeout(function () { //If the request to the server takes longer than 8 seconds, display this text
+    var requestTimeout = setTimeout(() => { 
       $('#wikipedia-links').text('Sorry, we failed to reach the wikipedia resources!');
     }, 8000);
 
@@ -62,15 +61,23 @@ function loadData() {
   }).done(function (data) {
     var wiki = data[1];
 
-    for (var i = 0; i < wiki.length; i++) {
+    for (let i = 0; i < wiki.length; i++) {
       var wikiUrl = 'https://en.wikipedia.org/wiki/' + wiki[i];
-      $('#wikipedia-links').append('<li>' + '<a href="' + wikiUrl + '">' + wiki[i] + '</a></li>');
+      $('#wikipedia-links').append('<p>' + '<a href="' + wikiUrl + '">' + wiki[i] + '</a></p>');
     };
 
   clearTimeout(requestTimeout); //Clear the timeout as the server request was a success
 });
 
-return false; //Allows the current results to stay populated on the page
+$('#city-selection').addClass('hide-it');
+$('#loading-text').css('display', 'inline');
+
+setTimeout(() => {
+  $('#loading-text').css('display', 'none');
+  $('#main-content').removeClass('hide-it');
+}, 3000);
+
+return false; 
 }
 
 $('#form-container').submit(loadData);

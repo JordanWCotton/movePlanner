@@ -2,33 +2,41 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Your Moving Companion</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Website that displays information for given addresses and cities">
+    <meta name="author" content="Jordan Cotton">
+    <link  class="nav-img" rel="icon" href="images/navicon.png">
+    <title>movePlanner</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
-    <form id="form-container" class="form-container">
-        <label for="street">Street: </label><input type="text" id="street" value="">
-        <label for="city">City: </label><input type="text" id="city" value="">
-        <button id="submit-btn">Submit</button>
-    </form>
-
-    <hr>
-
-    <h2 id="greeting" class="greeting">Where do you want to live?</h2>
-
-
-    <div class="wikipedia-container">
-        <h3 id="wikipedia-header">Relevant Wikipedia Links</h3>
-        <ul id="wikipedia-links">Type in an address above and find relevant Wikipedia articles here!</ul>
-    </div>
-
-
-    <div class="nytimes-container">
-        <h3 id="nytimes-header">New York Times Articles</h3>
-        <ul id="nytimes-articles" class="article-list">What's going on in your new city? Enter an address and hit submit and the NY Times will tell you here!</ul>
-    </div>
-
+    <header id="city-selection">
+        <h1 id="app-name">movePlanner</h1>
+        <form id="form-container">
+            <label for="street">Street: </label><input type="text" id="street" value="">
+            <label for="city">City: </label><input type="text" id="city" value="">
+            <button id="submit-btn">Submit</button>
+        </form>
+    </header>
+    <section id="loading-text" >
+        <h1>Please wait, your information is being loaded...</h1>
+    </section>
+    <section id="main-content" class="hide-it">
+        <h1 id="greeting"></h1>
+        <div id="streetview-container"></div>
+        <section id="wiki-section">
+            <header id="wikipedia-header">
+                <h1>Relevant Wikipedia Links</h1>
+            </header>
+            <div id="wikipedia-links"></div>
+        </section>
+        <section id="nytimes-section">
+            <header id="nytimes-header">
+                <h1>New York Times Articles</h1>
+            </header>
+            <ul id="nytimes-articles" class="article-list"></ul>
+        </section>
+    </section>
     <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
     <script src="scripts/script.js"></script>
 </body>
