@@ -2,9 +2,9 @@ loadData = () => {
     $('#wikipedia-links').text("");
     $('#nytimes-articles').text("");
 
-    const wikiApiUserAgent = '';
-    const streetviewApiKey = ''; 
-    const nytApiKey = ''; 
+    const wikiApiUserAgent = process.env.GOOG_MAP;
+    const streetviewApiKey = process.env.NYT_API;
+    const nytApiKey = process.env.WIKI_CRED;
 
     /* Google Maps Streeview API section */
     /* -------------------------------- */
