@@ -80,4 +80,4 @@ setTimeout(() => {
 return false; 
 }
 
-$('#submit-btn').submit(loadData);
+$('#submit-btn').click(loadData);
