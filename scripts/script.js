@@ -2,9 +2,9 @@ loadData = () => {
     $('#wikipedia-links').text("");
     $('#nytimes-articles').text("");
 
-    const wikiApiUserAgent = process.env.GOOG_MAP;
-    const streetviewApiKey = process.env.NYT_API;
-    const nytApiKey = process.env.WIKI_CRED;
+    var wikiApiUserAgent = process.env.GOOG_MAP;
+    var streetviewApiKey = process.env.NYT_API;
+    var nytApiKey = process.env.WIKI_CRED;
 
     /* Google Maps Streeview API section */
     /* -------------------------------- */
@@ -80,4 +80,4 @@ setTimeout(() => {
 return false; 
 }
 
-$('#form-container').submit(loadData);
+$('#submit-btn').submit(loadData);
