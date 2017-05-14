@@ -2,9 +2,9 @@ function loadData () {
     $('#wikipedia-links').text("");
     $('#nytimes-articles').text("");
 
-    const wikiApiUserAgent = '';
-    const streetviewApiKey = ''; 
-    const nytApiKey = '';  
+    const wikiApiUserAgent = 'movePlanner app owner=Jordancotton55@gmail.com';
+    const streetviewApiKey = 'AIzaSyDvQ5FPpmtyOyIqNnGja06oSyM_IArKJRM';
+    const nytApiKey = '0676b86673ca4398aecffa11ba10f626';  
 
     /* Google Maps Streeview API section */
     /* -------------------------------- */
@@ -81,3 +81,9 @@ return false;
 }
 
 $('#submit-btn').click(loadData);
+$('#form-container').keypress((e)=> {
+  if (e.which == 13) {
+    loadData();
+    console.log('Called');
+  }
+});
