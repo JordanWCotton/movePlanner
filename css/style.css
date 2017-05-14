@@ -32,7 +32,7 @@ a:link, a:visited, a:hover, a:active {
 }
 
 #loading-text {
-    padding-top: 15%;
+    margin-top: 15%;
     text-align: center;
     display: none;
 }
@@ -104,6 +104,15 @@ a:link, a:visited, a:hover, a:active {
 input {
     border-radius: 6px;
     border: none;
+}
+
+#street-input {
+    display: block;
+    margin-bottom: 2%;
+}
+
+#city-input {
+    margin-bottom: 2%;
 }
 
 @media only screen and (max-width: 750px) {
