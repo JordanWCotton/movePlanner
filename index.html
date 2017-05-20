@@ -19,7 +19,7 @@
             <div id="city-input">
             <label for="city">City: </label><input type="text" id="city" value="">
             </div>
-            <button id="submit-btn" type="button">Submit</button>
+            <button id="submit-btn" class="cs-btn" type="button">Submit</button>
         </form>
     </header>
     <section id="loading-text">
@@ -29,17 +29,18 @@
         <h2 id="greeting">Where do you want to live?</h2>
         <div id="streetview-container"></div>
         <section id="wiki-section">
-            <header id="wikipedia-header">
+            <header id="wikipedia-header" class="cs-section">
                 <h2>Relevant Wikipedia Links</h2>
             </header>
-            <div id="wikipedia-links"></div>
+            <div id="wikipedia-links" class="cs-section"></div>
         </section>
         <section id="nytimes-section">
-            <header id="nytimes-header">
+            <header id="nytimes-header" class="cs-section">
                 <h2>New York Times Articles</h2>
             </header>
-            <ul id="nytimes-articles" class="article-list"></ul>
+            <ul id="nytimes-articles" class="article-list cs-section"></ul>
         </section>
+        <button id="reset-button" class="cs-btn" type="button">Go back</button>
     </section>
     <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
     <script src="scripts/script.js"></script>

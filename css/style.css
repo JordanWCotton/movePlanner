@@ -14,6 +14,10 @@ a:link, a:visited, a:hover, a:active {
     color: #F5F5F5;
 }
 
+h2 {
+    font-size: 40px;
+}
+
 #app-name {
     font-size: 80px;
 }
@@ -51,6 +55,7 @@ a:link, a:visited, a:hover, a:active {
 #streetview-container img {
     max-height: 330px;
     max-width: 100%;
+    border-radius: 10px;
 }
 
 #greeting {
@@ -86,14 +91,14 @@ a:link, a:visited, a:hover, a:active {
 .article {
     list-style-type: none;
     padding: 10px;
-    border-top: 3px solid #39CCCC;
+    border-top: 3px solid #F5F5F5;
 }
 
 .article:first-child {
     border-top:none;
 }
 
-#submit-btn {
+.cs-btn {
     border-radius: 6px;
     border: none;
     background-color: #39CCCC;
@@ -113,6 +118,11 @@ input {
 
 #city-input {
     margin-bottom: 2%;
+}
+
+.cs-section {
+    background-color: #39CCCC;
+    border-radius: 6px;
 }
 
 @media only screen and (max-width: 750px) {
