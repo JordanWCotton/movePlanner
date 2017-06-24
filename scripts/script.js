@@ -67,17 +67,17 @@ function loadData () {
     };
 
   clearTimeout(requestTimeout); //Clear the timeout as the server request was a success
-});
+  });
 
-$('#city-selection').addClass('hide-it');
-$('#loading-text').css('display', 'inline');
+  $('#city-selection').addClass('hide-it');
+  $('#loading-text').css('display', 'inline');
 
-setTimeout(() => {
-  $('#loading-text').css('display', 'none');
-  $('#main-content').removeClass('hide-it');
-}, 3000);
+  setTimeout(() => {
+    $('#loading-text').css('display', 'none');
+    $('#main-content').removeClass('hide-it');
+    }, 3000);
 
-return false; 
+  return false; 
 }
 
 $('#submit-btn').click(loadData);
