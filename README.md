@@ -13,4 +13,4 @@ The user can input a street address and city, which will result in the backgroun
 
 ******API Keys have been removed from the JavaScript code. Subsequent users must request and insert their own public API keys via that API's respective owner******
 
-This application is hosted on Heroku, and is available at https://protected-scrubland-12743.herokuapp.com/.
+This application is hosted on Heroku, and is available at https://moveplanner.herokuapp.com/.
